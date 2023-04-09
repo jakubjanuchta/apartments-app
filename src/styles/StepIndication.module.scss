@@ -1,0 +1,128 @@
+@keyframes swiftIn {
+  from {
+    right: 100%;
+  }
+  to {
+    right: 0;
+  }
+}
+
+.stepContainer {
+  max-width: 800px;
+  margin: 0 auto 40px;
+}
+
+.stepIndicator {
+  display: flex;
+  align-items: center;
+  padding: 0 40px;
+}
+
+.step {
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+  //position: relative;
+  z-index: 1;
+  padding-top: 40px;
+  width: 50px;
+}
+
+.stepIndicator .stepIcon {
+  height: 50px;
+  width: 50px;
+  border-radius: 50%;
+  background: #c2c2c2;
+  font-size: 10px;
+  text-align: center;
+  color: #ffffff;
+  position: relative;
+  line-height: 50px;
+  font-size: 20px;
+  z-index: 0;
+}
+
+.stepIndicator .stepIcon span {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  z-index: 2;
+}
+
+.stepActive .stepIcon {
+  //background: crimson;
+  overflow: hidden;
+}
+
+.stepActive .stepIcon::after {
+  content: "";
+  position: absolute;
+  display: block;
+  top: 0;
+  bottom: 0;
+  left: 0;
+
+  right: 0;
+  background: crimson;
+  z-index: 1;
+}
+
+.stepActive .stepIconActive::after {
+  animation: swiftIn 0.3s 1 linear forwards;
+}
+
+.step p {
+  text-align: center;
+  //position: absolute;
+  margin-top: 10px;
+  height: 30px;
+  color: #c2c2c2;
+  font-size: 14px;
+  font-weight: bold;
+}
+
+.stepActive p {
+  color: crimson;
+}
+
+// .step:nth-child(2) p,
+// .step:nth-child(3) p {
+//   left: 50%;
+//   transform: translateX(-50%);
+// }
+
+.indicatorLine {
+  position: relative;
+  width: 100%;
+  height: 2px;
+  background: #c2c2c2;
+  flex: 1;
+}
+
+.indicatorActive::after {
+  content: "";
+  position: absolute;
+  display: block;
+  top: 0;
+  bottom: 0;
+  left: 0;
+
+  right: 100%;
+  background: crimson;
+}
+
+:not(.indicatorAnimate).indicatorActive::after {
+  right: 0;
+}
+
+.indicatorAnimate.indicatorActive::after {
+  animation: swiftIn 1s 0.3s 1 ease forwards;
+}
+
+@media screen and (max-width: 500px) {
+  .step p {
+    font-size: 11px;
+    bottom: -20px;
+  }
+}

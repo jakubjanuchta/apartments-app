@@ -1,0 +1,183 @@
+.page {
+  min-height: 100vh;
+}
+
+.searchContainer {
+  min-height: calc(100vh - 170px);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.formContainer {
+  width: min(90vw, 450px);
+  margin: 0 auto;
+  background-color: #fff;
+  box-shadow: 0 0 0 1px rgba(#000, 0.05), 0 20px 50px 0 rgba(#000, 0.1);
+  border-radius: 15px;
+  position: relative;
+  transition: 0.15s ease-in;
+  padding: 30px 45px 20px;
+  @media (max-width: 600px) {
+    padding: 40px 30px 20px;
+  }
+  h2 {
+    text-transform: uppercase;
+    text-align: center;
+    font-size: 25px;
+    margin-bottom: 30px;
+    font-weight: 500;
+  }
+}
+
+.form {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.form > * {
+  display: block;
+  margin-bottom: 25px;
+}
+
+.form label {
+  display: block;
+  margin: 0 0 10px;
+  color: grey;
+  font-size: 12px;
+  font-weight: 500;
+  line-height: 1;
+  text-transform: uppercase;
+  letter-spacing: 0.2em;
+
+  @media (max-width: 600px) {
+    font-size: 11px;
+    letter-spacing: 0.05em;
+  }
+  span {
+    text-transform: lowercase;
+  }
+}
+
+.form input {
+  outline: none;
+  display: block;
+  background: rgba(0, 0, 0, 0.1);
+  width: 100%;
+  border: 0;
+  border-radius: 4px;
+  box-sizing: border-box;
+  padding: 12px 20px;
+  color: darkgrey;
+  font-family: inherit;
+  font-size: inherit;
+  font-weight: 300;
+  line-height: inherit;
+  transition: 0.3s ease;
+  border: 1px solid grey;
+
+  &:focus {
+    color: darkgrey;
+  }
+
+  .two & {
+    color: white;
+
+    &:focus {
+      color: white;
+    }
+  }
+}
+
+.form button {
+  outline: none;
+  background: crimson;
+  width: 100%;
+  border: 0;
+  border-radius: 4px;
+  padding: 12px 20px;
+  margin-top: 10px;
+  color: white;
+  font-family: inherit;
+  font-size: inherit;
+  font-weight: 400;
+  line-height: inherit;
+  text-transform: uppercase;
+  cursor: pointer;
+}
+
+.form .formGroup {
+  width: 100%;
+  position: relative;
+  input {
+    color: black;
+  }
+  > span {
+    position: absolute;
+    top: 100%;
+    left: 0;
+    color: red;
+    padding-top: 1px;
+    font-size: 9px;
+    max-height: 25px;
+  }
+}
+
+.form .formGroupHalf {
+  width: 45%;
+}
+
+.cardContainer {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-around;
+  width: min(100vw, 1200px);
+  margin: 0 auto;
+}
+
+.cityTiles {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 20px;
+}
+
+.searchTypeContainer {
+  margin: 0 auto;
+  text-align: center;
+  h2 {
+    position: fixed;
+    top: 40vh;
+    left: 50%;
+    transform: translateX(-50%);
+    text-transform: uppercase;
+  }
+
+  .buttonsContainer {
+    position: fixed;
+    top: 50vh;
+    left: 50%;
+    transform: translateX(-50%);
+    width: min(500px, 80vw);
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    align-items: center;
+
+    @media (max-width: 500px) {
+      justify-content: center;
+    }
+    button {
+      width: 200px;
+      border: 2px solid crimson;
+      margin-top: 20px;
+      transition: 0.5s;
+      &:hover {
+        background: crimson;
+        color: white;
+      }
+    }
+  }
+}

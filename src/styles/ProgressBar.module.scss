@@ -1,0 +1,39 @@
+.progress {
+  border-radius: 100px;
+  position: relative;
+  border: 1px solid black;
+  height: 10px;
+  width: 60vw;
+  position: relative;
+  overflow: hidden;
+
+  transition: 0.2s;
+}
+
+.bar {
+  /* You can modify the total time used for the animation here */
+  //animation: load 10s normal forwards;
+  /* 
+  Add a little spice by having a shadow below the bar.
+  Feel free to comment out this line below to have an even LITE version :D 
+  */
+  box-shadow: 0 10px 40px -10px black;
+
+  background: black;
+  height: 10px;
+  width: 110%;
+  transition: 0.2s;
+  position: absolute;
+  top: 0;
+  right: 100%;
+}
+
+// @keyframes load {
+//   0% {
+//     width: 0;
+//   }
+//   100% {
+//     /* You need to change the percentage below to match the value in the corresponding <span> */
+//     width: 100%;
+//   }
+// }
